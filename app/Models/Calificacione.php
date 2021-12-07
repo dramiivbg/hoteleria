@@ -16,4 +16,15 @@ class Calificacione extends Model
        
     ];
     use HasFactory;
+
+
+    public function User(){
+
+        return $this->belongsTo('App\models\User', 'id_user');
+    }
+
+    public function habitacion(){
+
+        return $this->belongsTo('App\models\Habitacione', 'id_habitacion');
+    }
 }

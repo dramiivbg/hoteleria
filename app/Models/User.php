@@ -21,11 +21,21 @@ class User extends Authenticatable
         'nombres',
         'apellidos',
         'telefono',
-        'cedula',
+        
         'rol',
         'email',
         'password',
     ];
+
+    public function Hotele(){
+
+        return $this->hasMany('App\models\Hotele', 'id_admin');
+    }
+
+    public function Calificaciones(){
+
+        return $this->hasMany('App\models\Calificacione', 'id_user');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

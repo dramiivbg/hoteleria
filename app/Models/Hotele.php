@@ -15,4 +15,14 @@ class Hotele extends Model
         
     ];
     use HasFactory;
+
+    public function admin(){
+
+        return $this->belongsTo('App\models\User', 'id_admin');
+    }
+
+    public function Habitaciones(){
+
+        return $this->hasMany('App\models\Habitacione', 'id_hotel');
+    }
 }

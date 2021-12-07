@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Calificacione;
 use Illuminate\Http\Request;
 
 class CalificacioneController extends Controller
@@ -13,7 +14,11 @@ class CalificacioneController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json([
+            'data' => Calificacione::all(),
+            'status' => 200
+            
+        ]);
     }
 
     /**
@@ -21,9 +26,13 @@ class CalificacioneController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $data = Calificacione::create($request->all());
+        return response()->json([
+            'data' => $data,
+            'status' => 200
+        ]);
     }
 
     /**
@@ -45,7 +54,11 @@ class CalificacioneController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json([
+
+            'data' => Calificacione::with('Users')->find($id),
+            'status' => 200
+        ]);
     }
 
     /**
@@ -68,7 +81,12 @@ class CalificacioneController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Calificacione::find($id);
+        $data->update($request->all());
+        return response()->json([
+            'data' => $data,
+            'status' => 200
+        ]);
     }
 
     /**
@@ -79,6 +97,24 @@ class CalificacioneController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $data = Calificacione::findOrFail($id);
+            $data->delete();
+            return response()->json([
+    
+                'data' => $id,
+                'status' => 200
+            ]);
+    
+        }
+        catch(\Exception $e){
+    
+            return response()->json([
+                'error' => $e->getMessage(),
+                'status' => 500
+            ]);
+          
+    
+        }
     }
 }

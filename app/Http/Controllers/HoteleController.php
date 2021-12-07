@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hotele;
 use Illuminate\Http\Request;
 
 class HoteleController extends Controller
@@ -13,7 +14,11 @@ class HoteleController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json([
+            'data' => Hotele::all(),
+            'status' => 200
+            
+        ]);
     }
 
     /**
@@ -21,9 +26,13 @@ class HoteleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $data = Hotele::create($request->all());
+        return response()->json([
+            'data' => $data,
+            'status' => 200
+        ]);
     }
 
     /**
@@ -45,7 +54,11 @@ class HoteleController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json([
+
+            'data' => Hotele::with('Habitaciones')->find($id),
+            'status' => 200
+        ]);
     }
 
     /**
@@ -68,7 +81,12 @@ class HoteleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Hotele::find($id);
+        $data->update($request->all());
+        return response()->json([
+            'data' => $data,
+            'status' => 200
+        ]);
     }
 
     /**
@@ -79,6 +97,24 @@ class HoteleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $data = Hotele::findOrFail($id);
+            $data->delete();
+            return response()->json([
+    
+                'data' => $id,
+                'status' => 200
+            ]);
+    
+        }
+        catch(\Exception $e){
+    
+            return response()->json([
+                'error' => $e->getMessage(),
+                'status' => 500
+            ]);
+          
+    
+        }
     }
 }

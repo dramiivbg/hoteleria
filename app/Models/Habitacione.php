@@ -15,4 +15,16 @@ class Habitacione extends Model
         
     ];
     use HasFactory;
+
+    public function Hotele(){
+
+        return $this->belongsTo('App\models\Hotele', 'id_hotel');
+    }
+
+    public function Calificaciones(){
+
+        return $this->hasMany('App\models\Calificacione', 'id_habitacion');
+    }
+
+    
 }
