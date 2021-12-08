@@ -29,11 +29,7 @@ class UserController extends Controller
     public function create(Request $request)
     {
       
-        $data = User::create($request->all());
-        return response()->json([
-            'data' => $data,
-            'status' => 200
-        ]);
+     
     }
 
     /**
@@ -44,7 +40,11 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = User::create($request->all());
+        return response()->json([
+            'data' => $data,
+            'status' => 200
+        ]);
     }
 
     /**

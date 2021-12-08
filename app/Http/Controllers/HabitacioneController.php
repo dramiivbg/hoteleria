@@ -28,11 +28,7 @@ class HabitacioneController extends Controller
      */
     public function create(Request $request)
     {
-        $data = Habitacione::create($request->all());
-        return response()->json([
-            'data' => $data,
-            'status' => 200
-        ]);
+      
     }
 
     /**
@@ -43,7 +39,11 @@ class HabitacioneController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = Habitacione::create($request->all());
+        return response()->json([
+            'data' => $data,
+            'status' => 200
+        ]);
     }
 
     /**

@@ -28,11 +28,7 @@ class HoteleController extends Controller
      */
     public function create(Request $request)
     {
-        $data = Hotele::create($request->all());
-        return response()->json([
-            'data' => $data,
-            'status' => 200
-        ]);
+      
     }
 
     /**
@@ -43,7 +39,11 @@ class HoteleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = Hotele::create($request->all());
+        return response()->json([
+            'data' => $data,
+            'status' => 200
+        ]);
     }
 
     /**
