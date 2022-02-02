@@ -3,6 +3,8 @@
 use App\Http\Controllers\CalificacioneController;
 use App\Http\Controllers\HabitacioneController;
 use App\Http\Controllers\HoteleController;
+use App\Http\Controllers\PerfileController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 
 use Illuminate\Http\Request;
@@ -27,3 +29,5 @@ Route::resource('usuario', UserController::class);
 Route::resource('hotel', HoteleController::class);
 Route::resource('habitacion', HabitacioneController::class);
 Route::resource('calificacion', CalificacioneController::class);
+Route::resource('rol', RoleController::class);
+Route::resource('perfil', PerfileController::class);

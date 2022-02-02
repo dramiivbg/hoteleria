@@ -22,7 +22,7 @@ class User extends Authenticatable
         'apellidos',
         'telefono',
         
-        'rol',
+        
         'email',
         'password',
     ];
@@ -35,6 +35,12 @@ class User extends Authenticatable
     public function Calificaciones(){
 
         return $this->hasMany('App\models\Calificacione', 'id_user');
+    }
+
+  
+    public function perfil()
+    {
+        return $this->hasMany('App\models\Perfile' , 'id_user');
     }
 
     /**
