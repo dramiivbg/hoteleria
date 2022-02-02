@@ -56,7 +56,7 @@ class PerfileController extends Controller
     {
         return response()->json([
 
-            'data' => Perfile::with('Users')->find($id),
+            'data' => Perfile::with('User')->find($id),
             'status' => 200
         ]);
     }

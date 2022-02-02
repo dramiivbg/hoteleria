@@ -14,7 +14,7 @@ class Role extends Model
        
     ];
 
-    public function perfil()
+    public function Perfil()
     {
         return $this->hasMany('App\models\Perfile' , 'id_rol');
     }

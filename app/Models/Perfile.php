@@ -15,12 +15,12 @@ class Perfile extends Model
        
     ];
 
-    public function user(){
+    public function User(){
 
         return $this->hasMany('App\models\User', 'id_user');
     }
 
-    public function rol()
+    public function Rol()
     {
         return $this->hasMany('App\models\Role' , 'id_rol');
     }

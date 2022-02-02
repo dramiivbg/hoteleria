@@ -56,7 +56,7 @@ class RoleController extends Controller
     {
         return response()->json([
 
-            'data' => Role::with('Perfiles')->find($id),
+            'data' => Role::with('Perfil')->find($id),
             'status' => 200
         ]);
     }

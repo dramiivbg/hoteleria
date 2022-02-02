@@ -56,7 +56,7 @@ class CalificacioneController extends Controller
     {
         return response()->json([
 
-            'data' => Calificacione::with('Users')->find($id),
+            'data' => Calificacione::with('User')->find($id),
             'status' => 200
         ]);
     }

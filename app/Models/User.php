@@ -38,7 +38,7 @@ class User extends Authenticatable
     }
 
   
-    public function perfil()
+    public function Perfil()
     {
         return $this->hasMany('App\models\Perfile' , 'id_user');
     }
