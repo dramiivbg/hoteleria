@@ -18,7 +18,9 @@ class HoteleFactory extends Factory
         return [
             'id_admin' => User::all()->random()->id,
             'nombre' => $this->faker->unique()->name(),
-            'direccion' => $this->faker->address()
+            'direccion' => $this->faker->address(),
+            'img' => $this->faker->imageUrl()
+
         ];
     }
 }

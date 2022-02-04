@@ -11,7 +11,8 @@ class Hotele extends Model
     protected $fillable = [
         'id_admin',
         'hombre',
-        'direccion'
+        'direccion',
+        'img'
         
     ];
     use HasFactory;

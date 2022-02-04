@@ -19,7 +19,8 @@ class HabitacioneFactory extends Factory
             'id_hotel' => Hotele::all()->random()->id,
             'nombre' => $this->faker->unique()->name(),
             'valor' => $this->faker->numerify(),
-            'descripcion' => $this->faker->text()
+            'descripcion' => $this->faker->text(),
+            'img' => $this->faker->imageUrl()
         ];
     }
 }

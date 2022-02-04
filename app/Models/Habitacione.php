@@ -11,7 +11,8 @@ class Habitacione extends Model
         'id_hotel',
         'nombre',
         'valor',
-        'descripcion'
+        'descripcion',
+        'img'
         
     ];
     use HasFactory;
