@@ -17,8 +17,8 @@ class CreatePerfilesTable extends Migration
             $table->increments('id');
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('users');
-            $table->integer('id_rol')->unsigned();
-            $table->foreign('id_rol')->references('id')->on('roles');
+            $table->string('rol');
+          
             $table->timestamps();
         });
     }

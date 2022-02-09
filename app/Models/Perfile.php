@@ -10,7 +10,7 @@ class Perfile extends Model
 
     protected $fillable = [
         'id_user',
-        'id_rol',
+        'rol',
         
        
     ];
@@ -20,10 +20,7 @@ class Perfile extends Model
         return $this->hasMany('App\models\User', 'id_user');
     }
 
-    public function Rol()
-    {
-        return $this->hasMany('App\models\Role' , 'id_rol');
-    }
+  
 
     use HasFactory;
 }

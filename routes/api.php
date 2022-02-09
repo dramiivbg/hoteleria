@@ -29,5 +29,4 @@ Route::resource('usuario', UserController::class);
 Route::resource('hotel', HoteleController::class);
 Route::resource('habitacion', HabitacioneController::class);
 Route::resource('calificacion', CalificacioneController::class);
-Route::resource('rol', RoleController::class);
 Route::resource('perfil', PerfileController::class);

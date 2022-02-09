@@ -19,8 +19,8 @@ class CreateHabitacionesTable extends Migration
             $table->foreign('id_hotel')->references('id')->on('hoteles');
             $table->string('nombre')->unique();
             $table->integer('valor');
-            $table->text('descripcion');
-            $table->string('img');
+            $table->longText('descripcion');
+            $table->binary('img');
             
             $table->timestamps();
         });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hotele;
 use Illuminate\Http\Request;
+use SebastianBergmann\Environment\Console;
 
 class HoteleController extends Controller
 {
@@ -39,6 +40,9 @@ class HoteleController extends Controller
      */
     public function store(Request $request)
     {
+
+        
+
         $data = Hotele::create($request->all());
         return response()->json([
             'data' => $data,

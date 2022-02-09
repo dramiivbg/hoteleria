@@ -10,7 +10,7 @@ class Hotele extends Model
 
     protected $fillable = [
         'id_admin',
-        'hombre',
+        'nombre',
         'direccion',
         'img'
         
