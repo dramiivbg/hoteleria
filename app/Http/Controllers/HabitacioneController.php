@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Habitacione;
+use App\Models\Hotele;
 use Illuminate\Http\Request;
 
 class HabitacioneController extends Controller
@@ -54,11 +55,15 @@ class HabitacioneController extends Controller
      */
     public function show($id)
     {
+
+       
         return response()->json([
 
-            'data' => Habitacione::with('Calificaciones')->find($id),
+            'data' => Habitacione::with('Hoteles')->find($id),
             'status' => 200
         ]);
+
+    
     }
 
     /**

@@ -19,8 +19,8 @@ class PerfileFactory extends Factory
         return [
             
             'id_user' => User::all()->random()->id,
-            'id_rol' => Role::all()->random()->id,
-            'remember_token' => Str::random(10),
+            'rol' =>  $this->faker->randomElement(['admin', 'user']),
+         
         ];
     }
 }

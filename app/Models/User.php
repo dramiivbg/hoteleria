@@ -40,7 +40,7 @@ class User extends Authenticatable
   
     public function Perfil()
     {
-        return $this->hasMany('App\models\Perfile' , 'id_user');
+        return $this->belongsTo('App\models\Perfile' , 'id_user');
     }
 
     /**

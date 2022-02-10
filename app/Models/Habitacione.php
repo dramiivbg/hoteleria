@@ -17,7 +17,7 @@ class Habitacione extends Model
     ];
     use HasFactory;
 
-    public function Hotele(){
+    public function Hoteles(){
 
         return $this->belongsTo('App\models\Hotele', 'id_hotel');
     }

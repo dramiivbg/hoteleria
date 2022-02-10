@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Hotele::factory(40)->create();
         \App\Models\Habitacione::factory(40)->create();
         \App\Models\Calificacione::factory(40)->create();
-        \App\Models\Role::factory(2)->create();
+       
         \App\Models\Perfile::factory(40)->create();
 
 
