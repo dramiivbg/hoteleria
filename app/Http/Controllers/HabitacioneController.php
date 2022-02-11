@@ -59,7 +59,7 @@ class HabitacioneController extends Controller
        
         return response()->json([
 
-            'data' => Habitacione::with('Hoteles')->find($id),
+            'data' => Habitacione::with('Calificaciones')->find($id),
             'status' => 200
         ]);
 
