@@ -57,9 +57,11 @@ class UserController extends Controller
     {
         return response()->json([
 
-            'data' => User::with('Calificaciones')->find($id),
+            'data' => User::with('Calificaciones','Hoteles')->find($id),
             'status' => 200
         ]);
+
+     
     }
 
     /**

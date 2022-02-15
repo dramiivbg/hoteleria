@@ -27,7 +27,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function Hotele(){
+    public function Hoteles(){
 
         return $this->hasMany('App\models\Hotele', 'id_admin');
     }
