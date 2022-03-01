@@ -12,7 +12,8 @@ class Calificacione extends Model
         'id_habitacion',
         'id_user',
         'calificacion',
-        'comentario'
+        'comentario',
+        'fecha'
        
     ];
     use HasFactory;

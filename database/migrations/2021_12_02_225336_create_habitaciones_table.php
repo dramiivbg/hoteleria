@@ -20,7 +20,7 @@ class CreateHabitacionesTable extends Migration
             $table->string('nombre')->unique();
             $table->integer('valor');
             $table->longText('descripcion');
-            $table->binary('img');
+    
             
             $table->timestamps();
         });

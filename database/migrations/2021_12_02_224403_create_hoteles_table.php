@@ -19,7 +19,7 @@ class CreateHotelesTable extends Migration
             $table->foreign('id_admin')->references('id')->on('users');
             $table->string('nombre')->unique();
             $table->string('direccion');
-            $table->binary('img');
+            
             $table->timestamps();
         });
     }

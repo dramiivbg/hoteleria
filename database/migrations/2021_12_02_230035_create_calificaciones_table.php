@@ -21,6 +21,7 @@ class CreateCalificacionesTable extends Migration
             $table->foreign('id_user')->references('id')->on('users');
             $table->integer('calificacion')->unsigned()->default(0);
             $table->text('comentario');
+            $table->date('fecha');
             $table->timestamps();
         });
     }

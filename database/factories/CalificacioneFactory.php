@@ -19,7 +19,8 @@ class CalificacioneFactory extends Factory
             'id_habitacion' => Habitacione::all()->random()->id,
             'id_user' => User::all()->random()->id,
             'calificacion' => $this->faker->numerify('#'),
-            'comentario' => $this->faker->text()
+            'comentario' => $this->faker->text(),
+            'fecha' => $this->faker->date()
         ];
     }
 }
