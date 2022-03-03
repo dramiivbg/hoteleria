@@ -20,7 +20,7 @@ class HabitacioneFactory extends Factory
             'nombre' => $this->faker->unique()->name(),
             'valor' => $this->faker->numerify(),
             'descripcion' => $this->faker->text(),
-            
+            'img' => $this->faker->text()
         ];
     }
 }
