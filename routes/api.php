@@ -25,11 +25,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::group([
+    'prefix' => '',
+    ],
+function(){
     
 Route::resource('usuario', UserController::class);
 Route::resource('hotel', HoteleController::class);
 Route::resource('habitacion', HabitacioneController::class);
 Route::resource('calificacion', CalificacioneController::class);
 Route::resource('perfil', PerfileController::class);
+    }
+);
 
